@@ -1,0 +1,240 @@
+:root {
+  --grey: rgb(27, 27, 27);
+  --greyed-out: rgb(109, 106, 106);
+  --middle-background: rgb(233, 237, 237);
+  --button-color1: #f78da7;
+  --button-color2: #cf2e2e;
+  --pink: #ff6986;
+  --dropdown-border: rgb(232, 231, 231);
+  --middle-text: rgb(8, 8, 53);
+  --bottom-background: #2e61d2
+}
+
+* {
+  /* margin: 0;
+  padding: 0; */
+  box-sizing: border-box;
+}
+
+body,
+html {
+  font-family: sans-serif;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+@layer header {
+  .logo1 {
+    width: 250px;
+  }
+  .heading {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 110px;
+  }
+
+  .navbar ul {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+  }
+  .navbar a {
+    color: var(--grey);
+    font-weight: 500;
+  }
+
+  .navbar li {
+    list-style: none;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+  }
+  .dropdown-link {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-link:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content {
+    position: absolute;
+    display: none;
+    border: 1px solid rgb(232, 231, 231);
+    border-radius: 5px;
+    background-color: white;
+    padding: 10px 16px;
+  }
+  .dropdown-content a {
+    padding: 10px 16px;
+    text-wrap: nowrap;
+    display: block;
+    text-transform: capitalize;
+  }
+  .dropdown-content a:first-child {
+    color: var(--greyed-out);
+    font-size: 0.8rem;
+  }
+  .dropdown-content a:first-child:hover {
+    background-color: transparent;
+  }
+  .dropdown-content a:hover {
+    background-color: var(--middle-background);
+  }
+  .icon-nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .icon-nav i {
+    font-size: 1.5rem;
+    color: var(--grey);
+  }
+  .icon-nav i:hover {
+    cursor: pointer;
+  }
+
+  .get-started {
+    background-color: var(--pink);
+    font-size: 1.2rem;
+    color: white;
+
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+  }
+
+  .get-started:hover {
+    cursor: pointer;
+    background-color: var(--button-color1);
+  }
+}
+
+@layer middle-container {
+  .middle-container {
+    height: 640px;
+    background-color: var(--middle-background);
+  }
+  .grid-container {
+    max-width: fit-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:4fr 0.5fr;
+    margin: 0 10rem;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-self: center;
+  }
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    text-align: left;
+    color: var(--pink);
+  }
+
+  h1 span {
+    color: var(--middle-text);
+  }
+
+  h3 {
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--middle-text);
+  }
+  .left-grid img {
+    width: 500px;
+  }
+.btns{
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+  .popular-btn {
+    background-color: var(--pink);
+    font-size: 1.2rem;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+  }
+
+  .popular-btn:hover {
+    cursor: pointer;
+    background-color: var(--button-color1);
+  }
+
+   .get-started-clear{
+    background-color: white
+    font-size: 5rem;
+    color: var(--grey);
+    border: 1px solid;
+    padding: 1rem 4rem;
+    border-radius: 25px;
+  }
+
+  .get-started-clear:hover{
+    background-color: rgb(235, 227, 216);
+    cursor: pointer;
+  }
+
+  .reviews{
+    grid-column: 1 / -1;
+     display: flex;
+     gap: 1rem;
+
+  }
+  .reviews img{
+    width: 5rem;
+  }
+  .reviews span {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  .reviews p{
+    font-size: 0.85rem;
+  }
+}
+
+@layer bottom-container{
+.bottom-container{
+    height: 400px;
+    background-color: var(--bottom-background)
+}
+
+.box-wrapper{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.bottom-box-white{
+    width: 750px;
+    height: 240px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border: 1px var(--dropdown-border);
+    background-color: white;
+}
+
+.bottom-box-white h3 {
+    font-size: 1rem;
+    text-wrap: wrap;
+}
+
+.chatbox i{
+position: fixed;
+bottom: 50px;
+right: 10px;
+font-size: 3rem;
+color: white;
+padding: 1rem 1rem;
+border-radius: 50%;
+background-color: var(--pink);
+cursor: pointer;
+}
+}
